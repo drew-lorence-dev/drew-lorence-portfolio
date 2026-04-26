@@ -1,24 +1,29 @@
-import { Music2, Disc3, Mic2 } from "lucide-react";
+"use client";
 
-const placeholderTracks = [
+import { Music2, Disc3, Mic2, Download } from "lucide-react";
+import { useRef } from "react";
+
+const tracks = [
   {
-    title: "Track Title One",
-    genre: "Electronic / Ambient",
-    year: "2024",
-  },
-  {
-    title: "Track Title Two",
-    genre: "Lo-fi / Instrumental",
-    year: "2024",
-  },
-  {
-    title: "Track Title Three",
-    genre: "Hip-hop / Beats",
-    year: "2023",
+    title: "See You Space Cowboy",
+    description: "Made for Wyatt after a generous contribution to Kids Chance of America",
+    year: "2025",
+    audioSrc: "/see-you-space-cowboy.mp3",
   },
 ];
 
 export default function Music() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleDownload = (filename: string, src: string) => {
+    const link = document.createElement("a");
+    link.href = src;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="music" className="py-28 px-6 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -37,8 +42,8 @@ export default function Music() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {placeholderTracks.map((track) => (
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {tracks.map((track) => (
             <div
               key={track.title}
               className="group p-6 rounded-2xl border border-white/8 bg-surface hover:border-accent-2/40 hover:bg-surface-2 transition-all"
@@ -51,11 +56,37 @@ export default function Music() {
                 />
               </div>
 
-              <p className="text-white font-semibold mb-1">{track.title}</p>
-              <p className="text-xs font-mono text-muted">{track.genre}</p>
-              <p className="text-xs font-mono text-muted/60 mt-0.5">
+              <p className="text-white font-semibold mb-2">{track.title}</p>
+              <p className="text-sm text-muted mb-4">{track.description}</p>
+              <p className="text-xs font-mono text-muted/60 mb-4">
                 {track.year}
               </p>
+
+              {/* Audio Player */}
+              <div className="mb-4 space-y-3">
+                <audio
+                  ref={audioRef}
+                  controls
+                  className="w-full h-8 accent-accent-2"
+                  src={track.audioSrc}
+                >
+                  Your browser does not support the audio element.
+                </audio>
+
+                {/* Download Button */}
+                <button
+                  onClick={() =>
+                    handleDownload(
+                      "see-you-space-cowboy.mp3",
+                      track.audioSrc
+                    )
+                  }
+                  className="w-full px-4 py-2 rounded-lg bg-accent-2/10 border border-accent-2/30 text-accent-2 hover:bg-accent-2/20 hover:border-accent-2/50 transition-all flex items-center justify-center gap-2 text-sm font-mono"
+                >
+                  <Download size={16} />
+                  Download
+                </button>
+              </div>
             </div>
           ))}
         </div>
