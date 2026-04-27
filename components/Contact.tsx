@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Send, CheckCircle } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon } from "@/components/Icons";
 
 interface FormState {
   name: string;
@@ -53,7 +53,7 @@ export default function Contact() {
             Say Hello
           </h2>
           <p className="mt-4 text-muted max-w-lg">
-            Find me on LinkedIn or GitHub, or drop me a message here.
+            Find me on LinkedIn or drop me a message here.
           </p>
         </div>
 
@@ -202,24 +202,6 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a
-                href="https://github.com/drewlorence"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-white/8 bg-surface hover:border-accent/30 hover:bg-surface-2 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-accent/10 border border-accent/20 group-hover:bg-accent/20 transition-colors">
-                  <GitHubIcon size={18} />
-                </div>
-                <div>
-                  <p className="text-xs font-mono text-muted uppercase tracking-wide">
-                    GitHub
-                  </p>
-                  <p className="text-slate-200 text-sm">
-                    github.com/drewlorence
-                  </p>
-                </div>
-              </a>
             </div>
           </div>
         </div>

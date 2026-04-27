@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon } from "@/components/Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -17,16 +17,7 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a
-            href="https://github.com/drewlorence"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted hover:text-accent transition-colors"
-            aria-label="GitHub"
-          >
-            <GitHubIcon size={18} />
-          </a>
-          <a
+          <
             href="https://www.linkedin.com/in/drew-lorence-8aa99184/"
             target="_blank"
             rel="noopener noreferrer"

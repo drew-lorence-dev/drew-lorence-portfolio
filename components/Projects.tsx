@@ -2,7 +2,6 @@
 
 import { ExternalLink, X } from "lucide-react";
 import { useState } from "react";
-import { GitHubIcon } from "@/components/Icons";
 
 interface Screenshot {
   src: string;
@@ -13,7 +12,6 @@ interface Project {
   name: string;
   description: string;
   tags: string[];
-  github?: string;
   live?: string;
   accent?: string;
   screenshots?: Screenshot[];
@@ -95,17 +93,7 @@ export default function Projects() {
                     {project.name}
                   </h3>
                   <div className="flex gap-3 ml-4">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted hover:text-white transition-colors"
-                        aria-label="GitHub"
-                      >
-                        <GitHubIcon size={18} />
-                      </a>
-                    )}
+
                     {project.live && (
                       <a
                         href={project.live}

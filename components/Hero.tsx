@@ -1,5 +1,5 @@
 import { ArrowDown, Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon } from "@/components/Icons";
 
 export default function Hero() {
   return (
@@ -68,15 +68,6 @@ export default function Hero() {
 
         {/* Social icons */}
         <div className="flex gap-6 justify-center">
-          <a
-            href="https://github.com/drewlorence"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted hover:text-accent transition-colors"
-            aria-label="GitHub"
-          >
-            <GitHubIcon size={22} />
-          </a>
           <a
             href="https://www.linkedin.com/in/drew-lorence-8aa99184/"
             target="_blank"
