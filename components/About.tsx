@@ -34,27 +34,39 @@ export default function About() {
           {/* Bio */}
           <div className="space-y-5 text-slate-400 leading-relaxed text-base">
             <p>
-              I&apos;m Drew — a product leader who leads product teams and
-              owns the full arc from vision to execution. I work at the
-              intersection of business problems, user needs, and the engineering
-              teams who build the solutions. Having written production code
-              earlier in my career, I can gut-check technical complexity, speak
-              fluent engineering, and keep strategy grounded in what&apos;s
-              actually buildable.
+              I&apos;m Drew, a product leader with over a decade of experience
+              building software in the commercial insurance space. I&apos;ve
+              grown from hands-on technical roles into leading product teams
+              responsible for delivering real business outcomes. Today, I lead
+              teams building digital experiences at scale, shaping strategy,
+              setting direction, and making sure we&apos;re solving the right
+              problems before we invest too deeply.
             </p>
             <p>
-              That technical background has also made me unusually effective
-              with AI. Rather than outsourcing ideas to a dev team for
-              everything, I use AI as a force multiplier — prototyping,
-              building, and shipping things I care about in an AI-native way.
-              It&apos;s a different kind of builder&apos;s toolkit, and it
-              closes the gap between product thinking and working software.
+              At my core, I&apos;ve always been a builder. Earlier in my
+              career, that meant writing code and getting close to the details.
+              Over time, that evolved into building teams, developing people,
+              and creating the clarity needed for teams to move with confidence.
+              I care deeply about helping people reach their potential and
+              creating environments where teams can take ownership, do real
+              discovery, and deliver meaningful outcomes.
             </p>
             <p>
-              Outside of work, I&apos;m a musician. I produce and record my own
-              music, which keeps me connected to the creative side of making
-              things. That identity — builder, leader, and artist — shapes how
-              I think about products and the people who use them.
+              In practice, that means I spend a lot of time asking questions.
+              Have we really validated this? What happens if this assumption is
+              wrong? Where could this break once it&apos;s in the wild?
+              I&apos;m not there to dictate decisions or override direction.
+              I&apos;m there to help teams think more clearly, see around
+              corners, and make stronger calls on their own. When teams own
+              their thinking, the outcomes are better and they grow faster.
+            </p>
+            <p>
+              Outside of work, I&apos;ve always been drawn to creating through
+              music. I&apos;ve been writing and recording for most of my life,
+              and in recent years I&apos;ve created custom rap songs in support
+              of Kids Chance of America. Those projects are included here
+              because they&apos;re a real part of who I am. Different medium,
+              same drive to create something that connects with people.
             </p>
 
             <div className="pt-4 flex flex-col gap-3">
