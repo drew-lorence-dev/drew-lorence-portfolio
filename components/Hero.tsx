@@ -36,7 +36,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="text-base md:text-lg text-slate-400 max-w-lg mx-auto mb-10 leading-relaxed">
-          Get to know a little about me and check out some of the sweet stuff I build.
+          Check out more about me below.
         </p>
 
         {/* CTAs */}
