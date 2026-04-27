@@ -37,7 +37,6 @@ export default function Music() {
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.load();
-      audioRef.current.play().catch(() => {});
     }
   }, [activeIndex]);
 
