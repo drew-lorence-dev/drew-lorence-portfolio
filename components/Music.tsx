@@ -97,27 +97,27 @@ export default function Music() {
           </div>
         </div>
 
-        {/* Track list */}
-        <div className="space-y-2 max-w-md">
+        {/* Track grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {tracks.map((track, i) => (
             <div
               key={track.title}
-              className="px-4 py-3 rounded-lg border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group"
+              className="flex flex-col justify-between p-5 rounded-2xl border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group aspect-square"
             >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-xs font-mono text-muted/40 shrink-0">
+              <div>
+                <span className="text-xs font-mono text-muted/40 block mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm font-semibold text-white group-hover:text-accent-2 transition-colors truncate">
+                <p className="text-sm font-semibold text-white group-hover:text-accent-2 transition-colors leading-snug">
                   {track.title}
                 </p>
-                <span className="text-xs font-mono text-muted/40 ml-auto shrink-0">
+                <span className="text-xs font-mono text-muted/40 mt-1 block">
                   {track.year}
                 </span>
               </div>
               <audio
                 controls
-                className="w-full h-7 accent-accent-2"
+                className="w-full h-7 accent-accent-2 mt-4"
                 src={track.audioSrc}
                 preload="none"
               >
