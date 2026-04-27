@@ -41,9 +41,7 @@ export default function Hero() {
           <span className="text-accent font-semibold">·</span>{" "}
           <span className="whitespace-nowrap">Builder</span>{" "}
           <span className="text-accent-2 font-semibold">·</span>{" "}
-          <span className="whitespace-nowrap">AI Native</span>{" "}
-          <span className="text-accent font-semibold">·</span>{" "}
-          <span className="whitespace-nowrap">Unusual Creative</span>
+          <span className="whitespace-nowrap">AI Native <span className="text-accent font-semibold">·</span> Unusual Creative</span>
         </p>
 
         {/* Tagline */}
