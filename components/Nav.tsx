@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Mail, Menu, X } from "lucide-react";
 import { LinkedInIcon } from "@/components/Icons";
 
@@ -15,6 +16,11 @@ const navLinks = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && !isHome ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -32,7 +38,7 @@ export default function Nav() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
-          href="#home"
+          href={isHome ? "#home" : "/"}
           className="font-mono text-accent font-semibold tracking-tight hover:opacity-80 transition-opacity"
         >
           drew<span className="text-accent-2">.</span>build
@@ -43,7 +49,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
+                href={resolveHref(link.href)}
                 className="text-sm font-mono text-muted hover:text-white transition-colors"
               >
                 {link.label}
@@ -88,7 +94,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="font-mono text-muted hover:text-white transition-colors"
               onClick={() => setMenuOpen(false)}
             >
