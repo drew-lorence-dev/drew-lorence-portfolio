@@ -29,8 +29,9 @@ export default function Hero() {
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted font-mono mb-6 tracking-wide">
           Product Leader{" "}
-          <span className="text-accent font-semibold">·</span> AI-Native Builder{" "}
-          <span className="text-accent-2 font-semibold">·</span> Creator
+          <span className="text-accent font-semibold">·</span> Builder{" "}
+          <span className="text-accent-2 font-semibold">·</span> AI Native{" "}
+          <span className="text-accent font-semibold">·</span> Unusual Creative
         </p>
 
         {/* Tagline */}
