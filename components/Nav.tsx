@@ -53,7 +53,7 @@ export default function Nav() {
 
         {/* Social icons */}
         <div className="hidden md:flex items-center gap-4">
-          <
+          <a
             href="https://www.linkedin.com/in/drew-lorence-8aa99184/"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,7 +95,7 @@ export default function Nav() {
             </a>
           ))}
           <div className="flex gap-5 pt-2 border-t border-white/5">
-            <
+            <a
               href="https://www.linkedin.com/in/drew-lorence-8aa99184/"
               target="_blank"
               rel="noopener noreferrer"
