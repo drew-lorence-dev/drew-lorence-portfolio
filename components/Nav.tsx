@@ -6,7 +6,7 @@ import { LinkedInIcon } from "@/components/Icons";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Build", href: "#projects" },
   { label: "Music", href: "#music" },
   { label: "Contact", href: "#contact" },
 ];
