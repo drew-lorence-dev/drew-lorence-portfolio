@@ -37,36 +37,35 @@ export default function About() {
               I&apos;m Drew, a product leader with over a decade of experience
               building software in the commercial insurance space. I&apos;ve
               grown from hands-on technical roles into leading product teams
-              responsible for delivering real business outcomes. Today, I lead
-              teams building digital experiences at scale, shaping strategy,
-              setting direction, and making sure we&apos;re solving the right
-              problems before we invest too deeply.
+              responsible for real business outcomes. Today, I lead teams
+              building digital experiences at scale, shaping strategy and
+              making sure we&apos;re solving the right problems before we
+              invest too deeply.
             </p>
             <p>
-              At my core, I&apos;ve always been a builder. Earlier in my
-              career, that meant writing code and getting close to the details.
-              Over time, that evolved into building teams, developing people,
-              and creating the clarity needed for teams to move with confidence.
-              I care deeply about helping people reach their potential and
-              creating environments where teams can take ownership, do real
-              discovery, and deliver meaningful outcomes.
+              At my core, I&apos;ve always been a builder. I started by writing
+              code and staying close to the details, and over time that evolved
+              into building teams, developing people, and creating clarity so
+              teams can move with confidence. I care about helping people reach
+              their potential and creating environments where teams take
+              ownership and deliver meaningful outcomes.
             </p>
             <p>
-              In practice, that means I spend a lot of time asking questions.
-              Have we really validated this? What happens if this assumption is
-              wrong? Where could this break once it&apos;s in the wild?
-              I&apos;m not there to dictate decisions or override direction.
-              I&apos;m there to help teams think more clearly, see around
-              corners, and make stronger calls on their own. When teams own
-              their thinking, the outcomes are better and they grow faster.
+              In practice, I spend a lot of time asking questions. Have we
+              really validated this? What happens if this assumption is wrong?
+              Where could this break once it&apos;s in the wild? I&apos;m not
+              there to dictate decisions. I help teams think more clearly, see
+              around corners, and make stronger calls on their own.
             </p>
             <p>
-              Outside of work, I&apos;ve always been drawn to creating through
-              music. I&apos;ve been writing and recording for most of my life,
-              and in recent years I&apos;ve created custom rap songs in support
-              of Kids Chance of America. Those projects are included here
-              because they&apos;re a real part of who I am. Different medium,
-              same drive to create something that connects with people.
+              I still love to build, and in my personal time I create apps,
+              some just for me and others that I&apos;ve put out into the world
+              for anyone to use. You&apos;ll find those below. That same drive
+              to create shows up in my music as well. I&apos;ve been writing
+              and recording most of my life, and in recent years I&apos;ve
+              created custom rap songs in support of Kids Chance of America.
+              Different medium, same goal. Create something that connects with
+              people.
             </p>
 
             <div className="pt-4 flex flex-col gap-3">
