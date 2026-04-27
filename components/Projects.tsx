@@ -21,33 +21,6 @@ const projects: Project[] = [
     featured: true,
     accent: "accent",
   },
-  {
-    name: "FlowBoard",
-    description:
-      "A real-time kanban and project management tool built for small teams. Features drag-and-drop boards, live collaboration, and smart deadline tracking.",
-    tags: ["React", "Node.js", "WebSockets", "PostgreSQL"],
-    github: "#",
-    live: "#",
-    featured: true,
-    accent: "accent-2",
-  },
-  {
-    name: "Pulse",
-    description:
-      "A real-time analytics dashboard for indie app developers. Tracks key metrics, cohort retention, and funnel conversions with a minimal, focused UI.",
-    tags: ["React", "Python", "FastAPI", "D3.js"],
-    github: "#",
-    accent: "accent-3",
-  },
-  {
-    name: "Dropzone",
-    description:
-      "A desktop-native file organizer with smart auto-categorization. Drag files in, let the AI sort them. Built as an Electron app with local ML inference.",
-    tags: ["TypeScript", "Electron", "Python", "ONNX"],
-    github: "#",
-    live: "#",
-    accent: "accent",
-  },
 ];
 
 const accentColors: Record<string, { border: string; text: string; bg: string }> = {
@@ -94,7 +67,7 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 max-w-2xl">
           {projects.map((project) => {
             const colors = accentColors[project.accent ?? "accent"];
             return (
