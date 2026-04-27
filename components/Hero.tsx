@@ -36,8 +36,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="text-base md:text-lg text-slate-400 max-w-lg mx-auto mb-10 leading-relaxed">
-          A record of what I&apos;ve built — across product leadership,
-          AI-native development, and creativity.
+          Get to know a little about me and check out some of the sweet stuff I build.
         </p>
 
         {/* CTAs */}
