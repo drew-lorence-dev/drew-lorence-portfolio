@@ -1,18 +1,33 @@
-const skills = [
-  "Product Strategy",
-  "Product Operations",
-  "Outcome-Driven Thinking",
-  "Problem Framing",
-  "Decision Clarity",
-  "Team Leadership",
-  "Coaching & Mentorship",
-  "Empowered Teams",
-  "Discovery Mindset",
-  "Assumption Testing",
-  "Cross-Functional Leadership",
-  "Builder Mentality",
-  "AI-Native Development",
-  "Creative Thinking",
+const skillGroups = [
+  {
+    label: "Strategy & Direction",
+    skills: [
+      "Product Strategy",
+      "Product Operations",
+      "Outcome-Driven Thinking",
+      "Problem Framing",
+      "Decision Clarity",
+    ],
+  },
+  {
+    label: "People & Teams",
+    skills: [
+      "Team Leadership",
+      "Coaching & Mentorship",
+      "Empowered Teams",
+      "Cross-Functional Leadership",
+    ],
+  },
+  {
+    label: "Ways of Working",
+    skills: [
+      "Discovery Mindset",
+      "Assumption Testing",
+      "Builder Mentality",
+      "AI-Native Development",
+      "Creative Thinking",
+    ],
+  },
 ];
 
 export default function About() {
@@ -93,21 +108,27 @@ export default function About() {
           </div>
 
           {/* Skills */}
-          <div>
-            <p className="text-sm font-mono text-muted uppercase tracking-widest mb-6">
+          <div className="space-y-10">
+            <p className="text-sm font-mono text-muted uppercase tracking-widest">
               Skills &amp; Approach
             </p>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1.5 rounded-md border border-white/10 bg-white/5 text-sm font-mono text-slate-300 hover:border-accent/40 hover:text-accent transition-all"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-
+            {skillGroups.map((group) => (
+              <div key={group.label}>
+                <p className="text-xs font-mono text-muted/50 uppercase tracking-widest mb-4">
+                  {group.label}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-md border border-white/10 bg-white/5 text-sm font-mono text-slate-300 hover:border-accent/40 hover:text-accent transition-all"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
