@@ -118,9 +118,6 @@ export default function Music() {
                         : "hover:bg-white/5 border-l-2 border-l-transparent"
                     }`}
                   >
-                    <span className={`text-xs font-mono shrink-0 ${isActive ? "text-accent-2" : "text-muted/40"}`}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
                     <div className="min-w-0">
                       <p className={`text-sm font-semibold truncate transition-colors ${isActive ? "text-accent-2" : "text-slate-300"}`}>
                         {track.title}
