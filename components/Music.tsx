@@ -1,58 +1,32 @@
 "use client";
 
-import { Disc3, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import { useRef } from "react";
 
 const tracks = [
   {
     title: "See You Space Cowboy",
-    description: "Made for Wyatt after a generous contribution to Kids Chance of America",
     year: "2025",
     audioSrc: "/see-you-space-cowboy.mp3",
-    available: true,
   },
   {
-    title: "Coming Soon",
-    description: "Another custom song — details to be added.",
-    year: "—",
-    audioSrc: null,
-    available: false,
+    title: "The Next Episode",
+    year: "2024",
+    audioSrc: "/the-next-episode.mp3",
   },
   {
-    title: "Coming Soon",
-    description: "Another custom song — details to be added.",
-    year: "—",
-    audioSrc: null,
-    available: false,
+    title: "Month End, Quarter Close",
+    year: "2023",
+    audioSrc: "/month-end-quarter-close.mp3",
   },
   {
-    title: "Coming Soon",
-    description: "Another custom song — details to be added.",
-    year: "—",
-    audioSrc: null,
-    available: false,
-  },
-  {
-    title: "Coming Soon",
-    description: "Another custom song — details to be added.",
-    year: "—",
-    audioSrc: null,
-    available: false,
+    title: "Life as a Hustla",
+    year: "2022",
+    audioSrc: "/life-of-a-hustla.mp3",
   },
 ];
 
 export default function Music() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const handleDownload = (filename: string, src: string) => {
-    const link = document.createElement("a");
-    link.href = src;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="music" className="py-28 px-6 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -123,58 +97,35 @@ export default function Music() {
           </div>
         </div>
 
-        {/* Tracks */}
-        <div className="grid md:grid-cols-3 gap-4">
+        {/* Track list */}
+        <div className="space-y-3">
           {tracks.map((track, i) => (
             <div
-              key={i}
-              className={`group p-5 rounded-xl border bg-surface transition-all ${
-                track.available
-                  ? "border-white/8 hover:border-accent-2/40 hover:bg-surface-2"
-                  : "border-white/5 opacity-50"
-              }`}
+              key={track.title}
+              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 px-5 py-4 rounded-xl border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group"
             >
-              {/* Icon */}
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/5 border border-white/5 mb-4 group-hover:border-accent-2/20 transition-all">
-                <Disc3
-                  size={20}
-                  className={`transition-colors ${
-                    track.available
-                      ? "text-accent-2/50 group-hover:text-accent-2/80"
-                      : "text-white/20"
-                  }`}
-                />
+              {/* Number + title */}
+              <div className="flex items-center gap-4 min-w-0 sm:w-72 shrink-0">
+                <span className="text-xs font-mono text-muted/40 w-5 text-right shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-white truncate group-hover:text-accent-2 transition-colors">
+                    {track.title}
+                  </p>
+                  <p className="text-xs font-mono text-muted/50">{track.year}</p>
+                </div>
               </div>
 
-              <p className="text-white font-semibold text-sm mb-1">{track.title}</p>
-              <p className="text-xs text-muted mb-1 leading-relaxed">{track.description}</p>
-              <p className="text-xs font-mono text-muted/50 mb-4">{track.year}</p>
-
-              {track.available && track.audioSrc && (
-                <div className="space-y-2">
-                  <audio
-                    ref={audioRef}
-                    controls
-                    className="w-full h-8 accent-accent-2"
-                    src={track.audioSrc}
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
-                  <button
-                    onClick={() =>
-                      handleDownload("see-you-space-cowboy.mp3", track.audioSrc!)
-                    }
-                    className="w-full px-3 py-1.5 rounded-lg bg-accent-2/10 border border-accent-2/30 text-accent-2 hover:bg-accent-2/20 hover:border-accent-2/50 transition-all flex items-center justify-center gap-2 text-xs font-mono"
-                  >
-                    <Download size={14} />
-                    Download
-                  </button>
-                </div>
-              )}
-
-              {!track.available && (
-                <p className="text-xs font-mono text-white/20">// coming soon</p>
-              )}
+              {/* Audio player */}
+              <audio
+                controls
+                className="w-full h-8 accent-accent-2"
+                src={track.audioSrc}
+                preload="none"
+              >
+                Your browser does not support the audio element.
+              </audio>
             </div>
           ))}
         </div>
