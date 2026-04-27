@@ -23,7 +23,6 @@ const projects: Project[] = [
     description:
       "An activity tracking app built to keep you moving across all the ways you train. Connects with Fitbit and lets you log weights, cardio, stretching, and meditation — all in one place.",
     tags: ["Activity Tracking", "Fitbit API", "Lovable"],
-    live: "https://ninjaxlifestyle.lovable.app/",
     accent: "accent",
     screenshots: [
       { src: "/ninja-home.jpg", label: "Home Screen" },
