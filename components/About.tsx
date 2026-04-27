@@ -107,25 +107,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-2 gap-4">
-              {[
-                { value: "5+", label: "Years Building" },
-                { value: "20+", label: "Projects Shipped" },
-                { value: "∞", label: "Problems Solved" },
-                { value: "1", label: "Good Dog" },
-              ].map(({ value, label }) => (
-                <div
-                  key={label}
-                  className="p-5 rounded-xl border border-white/8 bg-surface"
-                >
-                  <div className="text-3xl font-bold text-accent font-mono">
-                    {value}
-                  </div>
-                  <div className="text-sm text-muted mt-1">{label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
