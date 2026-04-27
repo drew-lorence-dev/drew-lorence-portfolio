@@ -36,11 +36,14 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-muted font-mono mb-6 tracking-wide">
-          Product Leader{" "}
-          <span className="text-accent font-semibold">·</span> Builder{" "}
-          <span className="text-accent-2 font-semibold">·</span> AI Native{" "}
-          <span className="text-accent font-semibold">·</span> Unusual Creative
+        <p className="text-sm md:text-xl text-muted font-mono mb-6 tracking-wide">
+          <span className="whitespace-nowrap">Product Leader</span>{" "}
+          <span className="text-accent font-semibold">·</span>{" "}
+          <span className="whitespace-nowrap">Builder</span>{" "}
+          <span className="text-accent-2 font-semibold">·</span>{" "}
+          <span className="whitespace-nowrap">AI Native</span>{" "}
+          <span className="text-accent font-semibold">·</span>{" "}
+          <span className="whitespace-nowrap">Unusual Creative</span>
         </p>
 
         {/* Tagline */}
