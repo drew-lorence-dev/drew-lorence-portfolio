@@ -1,16 +1,16 @@
 const skills = [
   "Product Strategy",
-  "Roadmapping",
+  "Outcome-Driven Thinking",
+  "Problem Framing",
+  "Decision Clarity",
   "Team Leadership",
-  "Cross-functional Collaboration",
-  "Go-to-Market",
-  "User Research",
-  "Data-Informed Decisions",
-  "AI-Native Development",
-  "Agile / Scrum",
-  "UX Thinking",
-  "Engineering Fluency",
-  "Stakeholder Management",
+  "Coaching & Mentorship",
+  "Empowered Teams",
+  "Discovery Mindset",
+  "Assumption Testing",
+  "Cross-Functional Leadership",
+  "Builder Mentality",
+  "Creative Thinking",
 ];
 
 export default function About() {
