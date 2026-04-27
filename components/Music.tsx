@@ -71,16 +71,8 @@ export default function Music() {
                 doesn&apos;t have to be separate from giving back.
               </p>
               <p>
-                To learn more about{" "}
-                <a
-                  href="https://kidschance.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent-2 hover:text-accent-2/80 underline underline-offset-2 transition-colors"
-                >
-                  Kids Chance of America
-                </a>{" "}
-                or to support their mission, you can{" "}
+                To learn more about Kids Chance of America or to support
+                their mission, you can{" "}
                 <a
                   href="https://kidschance.org"
                   target="_blank"
