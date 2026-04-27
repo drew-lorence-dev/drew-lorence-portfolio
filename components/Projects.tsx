@@ -56,7 +56,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 px-6 scroll-mt-20"
+      className="py-14 px-6 scroll-mt-20"
       style={{
         background:
           "linear-gradient(to bottom, #07070f 0%, #0a0a18 50%, #07070f 100%)",

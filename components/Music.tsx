@@ -41,7 +41,7 @@ export default function Music() {
   }, [activeIndex]);
 
   return (
-    <section id="music" className="py-28 px-6 scroll-mt-20">
+    <section id="music" className="py-14 px-6 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">

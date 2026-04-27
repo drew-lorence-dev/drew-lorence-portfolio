@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 px-6 scroll-mt-20"
+      className="py-14 px-6 scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
