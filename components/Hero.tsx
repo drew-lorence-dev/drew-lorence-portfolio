@@ -21,6 +21,15 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        {/* Avatar */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/profile_picture_drawing.png"
+            alt="Drew Lorence"
+            className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-white/20 shadow-lg"
+          />
+        </div>
+
         {/* Name */}
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-6 text-white cursor-blink-after leading-none">
           Drew Lorence
