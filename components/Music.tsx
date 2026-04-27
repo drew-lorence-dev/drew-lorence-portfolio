@@ -61,47 +61,65 @@ export default function Music() {
           <p className="font-mono text-accent-2 text-sm tracking-widest uppercase mb-3">
             03. Music
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
             It&apos;s For The Kids
           </h2>
-          <div className="mt-4 text-muted max-w-3xl space-y-4">
-            <p>
-              Each year at a company event, I auction off a custom rap song to
-              the highest bidder, with all proceeds going to Kids Chance of
-              America. It started as a fun idea, but it&apos;s turned into
-              something I&apos;m really proud of. So far, I&apos;ve created
-              four custom songs, and together they&apos;ve helped generate
-              meaningful donations to support a great cause.
-            </p>
-            <p>
-              What I enjoy most is the combination of creativity and impact. I
-              get to build something personal and fun for someone else, while
-              also contributing to an organization that makes a real difference
-              in people&apos;s lives. It&apos;s a reminder that creating
-              doesn&apos;t have to be separate from giving back.
-            </p>
-            <p>
-              To learn more about{" "}
-              <a
-                href="https://kidschance.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-2 hover:text-accent-2/80 underline underline-offset-2 transition-colors"
-              >
-                Kids Chance of America
-              </a>{" "}
-              or to support their mission, you can{" "}
-              <a
-                href="https://kidschance.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-2 hover:text-accent-2/80 underline underline-offset-2 transition-colors"
-              >
-                visit them here
-              </a>
-              . If you&apos;re able to, I&apos;d encourage you to consider
-              making a donation.
-            </p>
+
+          <div className="flex flex-col md:flex-row gap-10 items-start">
+            {/* Text */}
+            <div className="text-muted space-y-4 flex-1">
+              <p>
+                Each year at a company event, I auction off a custom rap song to
+                the highest bidder, with all proceeds going to Kids Chance of
+                America. It started as a fun idea, but it&apos;s turned into
+                something I&apos;m really proud of. So far, I&apos;ve created
+                four custom songs, and together they&apos;ve helped generate
+                meaningful donations to support a great cause.
+              </p>
+              <p>
+                What I enjoy most is the combination of creativity and impact. I
+                get to build something personal and fun for someone else, while
+                also contributing to an organization that makes a real difference
+                in people&apos;s lives. It&apos;s a reminder that creating
+                doesn&apos;t have to be separate from giving back.
+              </p>
+              <p>
+                To learn more about{" "}
+                <a
+                  href="https://kidschance.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-2 hover:text-accent-2/80 underline underline-offset-2 transition-colors"
+                >
+                  Kids Chance of America
+                </a>{" "}
+                or to support their mission, you can{" "}
+                <a
+                  href="https://kidschance.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-2 hover:text-accent-2/80 underline underline-offset-2 transition-colors"
+                >
+                  visit them here
+                </a>
+                . If you&apos;re able to, I&apos;d encourage you to consider
+                making a donation.
+              </p>
+            </div>
+
+            {/* Logo */}
+            <a
+              href="https://kidschance.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 p-8 rounded-2xl border border-white/8 bg-white flex items-center justify-center hover:border-accent-2/40 transition-all"
+            >
+              <img
+                src="/kidschance-logo.svg"
+                alt="Kids Chance of America"
+                className="w-52"
+              />
+            </a>
           </div>
         </div>
 
