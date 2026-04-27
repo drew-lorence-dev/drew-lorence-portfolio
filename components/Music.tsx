@@ -1,7 +1,6 @@
 "use client";
 
-import { Download } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const tracks = [
   {
@@ -20,13 +19,28 @@ const tracks = [
     audioSrc: "/month-end-quarter-close.mp3",
   },
   {
-    title: "Life as a Hustla",
+    title: "Life of a Hustla",
     year: "2022",
     audioSrc: "/life-of-a-hustla.mp3",
   },
 ];
 
 export default function Music() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const active = tracks[activeIndex];
+
+  const handleSelect = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.load();
+      audioRef.current.play().catch(() => {});
+    }
+  }, [activeIndex]);
+
   return (
     <section id="music" className="py-28 px-6 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +54,6 @@ export default function Music() {
           </h2>
 
           <div className="flex flex-col md:flex-row gap-10 items-start">
-            {/* Text */}
             <div className="text-muted space-y-4 flex-1">
               <p>
                 Each year at a company event, I auction off a custom rap song to
@@ -81,7 +94,6 @@ export default function Music() {
               </p>
             </div>
 
-            {/* Logo */}
             <a
               href="https://kidschance.org"
               target="_blank"
@@ -97,34 +109,65 @@ export default function Music() {
           </div>
         </div>
 
-        {/* Track grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {tracks.map((track, i) => (
-            <div
-              key={track.title}
-              className="flex flex-col justify-between p-5 rounded-2xl border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group aspect-square"
-            >
+        {/* Player card */}
+        <div className="rounded-2xl border border-white/8 bg-surface overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+
+            {/* Track list */}
+            <div className="md:w-2/5 border-b md:border-b-0 md:border-r border-white/8">
+              {tracks.map((track, i) => {
+                const isActive = i === activeIndex;
+                return (
+                  <button
+                    key={track.title}
+                    onClick={() => handleSelect(i)}
+                    className={`w-full flex items-center gap-4 px-6 py-5 text-left transition-all border-b border-white/5 last:border-b-0 ${
+                      isActive
+                        ? "bg-accent-2/10 border-l-2 border-l-accent-2"
+                        : "hover:bg-white/5 border-l-2 border-l-transparent"
+                    }`}
+                  >
+                    <span className={`text-xs font-mono shrink-0 ${isActive ? "text-accent-2" : "text-muted/40"}`}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="min-w-0">
+                      <p className={`text-sm font-semibold truncate transition-colors ${isActive ? "text-accent-2" : "text-slate-300"}`}>
+                        {track.title}
+                      </p>
+                      <p className="text-xs font-mono text-muted/50 mt-0.5">{track.year}</p>
+                    </div>
+                    {isActive && (
+                      <span className="ml-auto shrink-0 w-2 h-2 rounded-full bg-accent-2 animate-pulse" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Player */}
+            <div className="flex-1 flex flex-col justify-center p-8 md:p-12 gap-6">
               <div>
-                <span className="text-xs font-mono text-muted/40 block mb-3">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-sm font-semibold text-white group-hover:text-accent-2 transition-colors leading-snug">
-                  {track.title}
+                <p className="text-xs font-mono text-accent-2 uppercase tracking-widest mb-2">
+                  Now Playing
                 </p>
-                <span className="text-xs font-mono text-muted/40 mt-1 block">
-                  {track.year}
-                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  {active.title}
+                </h3>
+                <p className="text-sm font-mono text-muted/60 mt-1">{active.year}</p>
               </div>
+
               <audio
+                ref={audioRef}
                 controls
-                className="w-full h-7 accent-accent-2 mt-4"
-                src={track.audioSrc}
-                preload="none"
+                className="w-full accent-accent-2"
+                src={active.audioSrc}
+                preload="auto"
               >
                 Your browser does not support the audio element.
               </audio>
             </div>
-          ))}
+
+          </div>
         </div>
       </div>
     </section>
