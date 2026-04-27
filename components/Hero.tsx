@@ -26,7 +26,7 @@ export default function Hero() {
           <img
             src="/profile_picture_drawing.png"
             alt="Drew Lorence"
-            className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-white/20 shadow-lg"
+            className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/20 shadow-lg"
           />
         </div>
 
