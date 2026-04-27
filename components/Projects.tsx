@@ -30,6 +30,18 @@ const projects: Project[] = [
       { src: "/ninja-activity.jpg", label: "View an Activity" },
     ],
   },
+  {
+    name: "The Product Dojo",
+    description:
+      "A learning platform prototype built for product managers who want to sharpen their craft. The Dojo delivers structured lessons at the intersection of AI and product management — practical skills, real frameworks, and the mindset shifts that separate good PMs from great ones.",
+    tags: ["Product Management", "AI", "Learning", "Lovable"],
+    accent: "accent-2",
+    screenshots: [
+      { src: "/dojo-home.jpg", label: "Home" },
+      { src: "/dojo-courses.jpg", label: "Courses" },
+      { src: "/dojo-lesson.jpg", label: "Lesson View" },
+    ],
+  },
 ];
 
 const accentColors: Record<string, { border: string; text: string; bg: string }> = {
@@ -78,7 +90,7 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 max-w-2xl">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => {
             const colors = accentColors[project.accent ?? "accent"];
             return (
