@@ -1,5 +1,6 @@
 const skills = [
   "Product Strategy",
+  "Product Operations",
   "Outcome-Driven Thinking",
   "Problem Framing",
   "Decision Clarity",
