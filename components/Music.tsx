@@ -1,6 +1,6 @@
 "use client";
 
-import { Music2, Disc3, Mic2, Download } from "lucide-react";
+import { Disc3, Download } from "lucide-react";
 import { useRef } from "react";
 
 const tracks = [
@@ -9,6 +9,35 @@ const tracks = [
     description: "Made for Wyatt after a generous contribution to Kids Chance of America",
     year: "2025",
     audioSrc: "/see-you-space-cowboy.mp3",
+    available: true,
+  },
+  {
+    title: "Coming Soon",
+    description: "Another custom song — details to be added.",
+    year: "—",
+    audioSrc: null,
+    available: false,
+  },
+  {
+    title: "Coming Soon",
+    description: "Another custom song — details to be added.",
+    year: "—",
+    audioSrc: null,
+    available: false,
+  },
+  {
+    title: "Coming Soon",
+    description: "Another custom song — details to be added.",
+    year: "—",
+    audioSrc: null,
+    available: false,
+  },
+  {
+    title: "Coming Soon",
+    description: "Another custom song — details to be added.",
+    year: "—",
+    audioSrc: null,
+    available: false,
   },
 ];
 
@@ -35,7 +64,7 @@ export default function Music() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             It&apos;s For The Kids
           </h2>
-          <div className="mt-4 text-muted max-w-2xl space-y-4">
+          <div className="mt-4 text-muted max-w-3xl space-y-4">
             <p>
               Each year at a company event, I auction off a custom rap song to
               the highest bidder, with all proceeds going to Kids Chance of
@@ -76,79 +105,61 @@ export default function Music() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
-          {tracks.map((track) => (
+        {/* Tracks */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {tracks.map((track, i) => (
             <div
-              key={track.title}
-              className="group p-6 rounded-2xl border border-white/8 bg-surface hover:border-accent-2/40 hover:bg-surface-2 transition-all"
+              key={i}
+              className={`group p-5 rounded-xl border bg-surface transition-all ${
+                track.available
+                  ? "border-white/8 hover:border-accent-2/40 hover:bg-surface-2"
+                  : "border-white/5 opacity-50"
+              }`}
             >
-              {/* Album art placeholder */}
-              <div className="w-full aspect-square rounded-xl mb-5 flex items-center justify-center bg-white/5 border border-white/5 group-hover:border-accent-2/20 transition-all">
+              {/* Icon */}
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/5 border border-white/5 mb-4 group-hover:border-accent-2/20 transition-all">
                 <Disc3
-                  size={48}
-                  className="text-accent-2/40 group-hover:text-accent-2/70 transition-colors animate-float"
+                  size={20}
+                  className={`transition-colors ${
+                    track.available
+                      ? "text-accent-2/50 group-hover:text-accent-2/80"
+                      : "text-white/20"
+                  }`}
                 />
               </div>
 
-              <p className="text-white font-semibold mb-2">{track.title}</p>
-              <p className="text-sm text-muted mb-4">{track.description}</p>
-              <p className="text-xs font-mono text-muted/60 mb-4">
-                {track.year}
-              </p>
+              <p className="text-white font-semibold text-sm mb-1">{track.title}</p>
+              <p className="text-xs text-muted mb-1 leading-relaxed">{track.description}</p>
+              <p className="text-xs font-mono text-muted/50 mb-4">{track.year}</p>
 
-              {/* Audio Player */}
-              <div className="mb-4 space-y-3">
-                <audio
-                  ref={audioRef}
-                  controls
-                  className="w-full h-8 accent-accent-2"
-                  src={track.audioSrc}
-                >
-                  Your browser does not support the audio element.
-                </audio>
+              {track.available && track.audioSrc && (
+                <div className="space-y-2">
+                  <audio
+                    ref={audioRef}
+                    controls
+                    className="w-full h-8 accent-accent-2"
+                    src={track.audioSrc}
+                  >
+                    Your browser does not support the audio element.
+                  </audio>
+                  <button
+                    onClick={() =>
+                      handleDownload("see-you-space-cowboy.mp3", track.audioSrc!)
+                    }
+                    className="w-full px-3 py-1.5 rounded-lg bg-accent-2/10 border border-accent-2/30 text-accent-2 hover:bg-accent-2/20 hover:border-accent-2/50 transition-all flex items-center justify-center gap-2 text-xs font-mono"
+                  >
+                    <Download size={14} />
+                    Download
+                  </button>
+                </div>
+              )}
 
-                {/* Download Button */}
-                <button
-                  onClick={() =>
-                    handleDownload(
-                      "see-you-space-cowboy.mp3",
-                      track.audioSrc
-                    )
-                  }
-                  className="w-full px-4 py-2 rounded-lg bg-accent-2/10 border border-accent-2/30 text-accent-2 hover:bg-accent-2/20 hover:border-accent-2/50 transition-all flex items-center justify-center gap-2 text-sm font-mono"
-                >
-                  <Download size={16} />
-                  Download
-                </button>
-              </div>
+              {!track.available && (
+                <p className="text-xs font-mono text-white/20">// coming soon</p>
+              )}
             </div>
           ))}
         </div>
-
-        {/* Stats / vibe row */}
-        <div className="grid grid-cols-3 gap-4 p-6 rounded-2xl border border-white/8 bg-surface">
-          {[
-            { icon: Mic2, label: "Vocalist", detail: "Producer & vocalist" },
-            { icon: Music2, label: "Genre", detail: "Electronic, Ambient, Lo-fi" },
-            { icon: Disc3, label: "Status", detail: "Recording new material" },
-          ].map(({ icon: Icon, label, detail }) => (
-            <div key={label} className="flex items-center gap-4 p-2">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-accent-2/10 border border-accent-2/20 shrink-0">
-                <Icon size={18} className="text-accent-2" />
-              </div>
-              <div>
-                <p className="text-xs font-mono text-muted uppercase tracking-wide">
-                  {label}
-                </p>
-                <p className="text-sm text-slate-300">{detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-8 text-center text-sm font-mono text-muted opacity-60">
-          // music coming soon — check back
-        </p>
       </div>
     </section>
   );
