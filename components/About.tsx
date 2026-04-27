@@ -10,6 +10,7 @@ const skills = [
   "Assumption Testing",
   "Cross-Functional Leadership",
   "Builder Mentality",
+  "AI-Native Development",
   "Creative Thinking",
 ];
 
