@@ -71,7 +71,7 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Apps I&apos;ve Built
           </h2>
-          <p className="mt-4 text-muted max-w-lg">
+          <p className="mt-4 text-slate-400 leading-relaxed text-base max-w-lg">
             A selection of projects — products, experiments, and tools.
             Everything here started with a problem worth solving.
           </p>

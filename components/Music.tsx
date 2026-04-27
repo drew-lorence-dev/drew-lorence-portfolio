@@ -54,7 +54,7 @@ export default function Music() {
           </h2>
 
           <div className="flex flex-col md:flex-row gap-10 items-start">
-            <div className="text-muted space-y-4 flex-1">
+            <div className="text-slate-400 leading-relaxed text-base space-y-4 flex-1">
               <p>
                 Each year at a company event, I auction off a custom rap song to
                 the highest bidder, with all proceeds going to Kids Chance of
