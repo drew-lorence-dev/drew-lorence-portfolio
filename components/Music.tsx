@@ -98,29 +98,26 @@ export default function Music() {
         </div>
 
         {/* Track list */}
-        <div className="space-y-3">
+        <div className="space-y-2 max-w-md">
           {tracks.map((track, i) => (
             <div
               key={track.title}
-              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 px-5 py-4 rounded-xl border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group"
+              className="px-4 py-3 rounded-lg border border-white/8 bg-surface hover:border-accent-2/30 hover:bg-surface-2 transition-all group"
             >
-              {/* Number + title */}
-              <div className="flex items-center gap-4 min-w-0 sm:w-72 shrink-0">
-                <span className="text-xs font-mono text-muted/40 w-5 text-right shrink-0">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-xs font-mono text-muted/40 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-white truncate group-hover:text-accent-2 transition-colors">
-                    {track.title}
-                  </p>
-                  <p className="text-xs font-mono text-muted/50">{track.year}</p>
-                </div>
+                <p className="text-sm font-semibold text-white group-hover:text-accent-2 transition-colors truncate">
+                  {track.title}
+                </p>
+                <span className="text-xs font-mono text-muted/40 ml-auto shrink-0">
+                  {track.year}
+                </span>
               </div>
-
-              {/* Audio player */}
               <audio
                 controls
-                className="w-full h-8 accent-accent-2"
+                className="w-full h-7 accent-accent-2"
                 src={track.audioSrc}
                 preload="none"
               >
