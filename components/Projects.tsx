@@ -67,10 +67,10 @@ export default function Projects() {
         {/* Header */}
         <div className="mb-16">
           <p className="font-mono text-accent text-sm tracking-widest uppercase mb-3">
-            02. Work
+            02. Build
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Things I&apos;ve Built
+            Apps I&apos;ve Built
           </h2>
           <p className="mt-4 text-muted max-w-lg">
             A selection of projects — products, experiments, and tools.
