@@ -13,7 +13,7 @@ So here's where I am with it, and how I got here.
 
 ---
 
-Here's the thing you should know about where I was when I first started using AI tools: I had just come out of a digital minimalism phase. I'd gotten off Instagram, deleted the news apps, turned off basically every notification on my phone. I was actively trying to use *less* technology. So the fact that I ended up going deep on AI is a little funny in retrospect.
+When I first started using AI tools, I was coming out of a digital minimalism phase — Cal Newport had really gotten into my head. I'd gotten off Instagram, deleted the news apps, turned off basically every notification on my phone. I was actively trying to use *less* technology. So the fact that I ended up going deep on AI is a little funny in retrospect.
 
 A friend in my industry kept raving about what he was doing with ChatGPT. I resisted for a while, then finally got curious enough to dive in.
 
