@@ -62,7 +62,7 @@ export default function About() {
             <p>
               At my core, I&apos;ve always been a builder. I started by writing
               code and staying close to the details, and over time that evolved
-              into building teams, developing people, and creating clarity so
+              into building teams, developing people, and creating systems so
               teams can move with confidence. I care about helping people reach
               their potential and creating environments where teams take
               ownership and deliver meaningful outcomes.
