@@ -19,7 +19,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "NINJAxLIFESTYLE",
+    name: "Ninja x Lifestyle",
     description:
       "An activity tracking app built to keep you moving across all the ways you train. Connects with Fitbit and lets you log weights, cardio, stretching, and meditation — all in one place.",
     tags: ["Activity Tracking", "Fitbit API", "Lovable"],
@@ -96,7 +96,7 @@ export default function Projects() {
             return (
               <div
                 key={project.name}
-                className={`group relative p-7 rounded-2xl border border-white/8 bg-surface transition-all duration-300 ${colors.border} hover:bg-surface-2`}
+                className={`group relative p-7 rounded-2xl border border-white/8 bg-surface transition-all duration-300 ${colors.border} hover:bg-surface-2 flex flex-col`}
               >
                 {/* Top row */}
                 <div className="flex items-start justify-between mb-4">
@@ -138,7 +138,7 @@ export default function Projects() {
 
                 {/* Screenshots */}
                 {project.screenshots && (
-                  <div>
+                  <div className="mt-auto">
                     <p className="text-xs font-mono text-muted/50 uppercase tracking-widest mb-4">
                       App Preview
                     </p>
