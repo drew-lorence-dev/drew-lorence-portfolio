@@ -81,10 +81,10 @@ export default function Projects() {
             02. Build
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Apps I&apos;ve Built
+            The Build Zone
           </h2>
-          <p className="mt-4 text-slate-400 leading-relaxed text-base max-w-xl">
-            These are personal projects I've built in my own time — not work deliverables, just things I wanted to exist. I build them because I enjoy it, and because staying close to the craft makes me a better product leader.
+          <p className="mt-4 text-slate-400 leading-relaxed text-base max-w-4xl">
+            I build stuff I think should exist, mainly for me. If something feels like it&apos;d be useful, I go build it. I use it until I think it&apos;s genuinely sweet, and then I start thinking about how other people could get something out of it too. That&apos;s the whole loop. Stay close to the craft, build rad things, and figure out how to make them matter to others.
           </p>
         </div>
 
