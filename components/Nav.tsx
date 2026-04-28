@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Build", href: "#projects" },
   { label: "Music", href: "#music" },
   { label: "Contact", href: "#contact" },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" },
 ];
 
 export default function Nav() {
