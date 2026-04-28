@@ -38,8 +38,8 @@ const projects: Project[] = [
     accent: "accent-2",
     screenshots: [
       { src: "/dojo-home.jpg", label: "Home" },
-      { src: "/dojo-courses.jpg", label: "Courses" },
-      { src: "/dojo-lesson.jpg", label: "Lesson" },
+      { src: "/dojo-lesson.jpg", label: "Courses" },
+      { src: "/dojo-courses.jpg", label: "Lesson" },
     ],
   },
 ];
