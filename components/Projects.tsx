@@ -83,9 +83,8 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Apps I&apos;ve Built
           </h2>
-          <p className="mt-4 text-slate-400 leading-relaxed text-base max-w-lg">
-            A selection of projects — products, experiments, and tools.
-            Everything here started with a problem worth solving.
+          <p className="mt-4 text-slate-400 leading-relaxed text-base max-w-xl">
+            These are personal projects I've built in my own time — not work deliverables, just things I wanted to exist. I build them because I enjoy it, and because staying close to the craft makes me a better product leader.
           </p>
         </div>
 
