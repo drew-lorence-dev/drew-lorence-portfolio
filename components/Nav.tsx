@@ -9,8 +9,8 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Build", href: "#projects" },
   { label: "Music", href: "#music" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Nav() {
