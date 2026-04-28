@@ -1,5 +1,5 @@
 ---
-title: "A Brief Introduction to Me and AI"
+title: "Me and AI: It's Been a Ride"
 date: "2026-04-27"
 excerpt: "Not because I have everything figured out, but because I have a lot going on in my head and writing has always been how I make sense of it."
 tags: ["AI", "Reflection"]
