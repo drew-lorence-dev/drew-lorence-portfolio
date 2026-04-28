@@ -1,5 +1,5 @@
 ---
-title: "Two Years of Figuring Out AI (And I'm Still Figuring It Out)"
+title: "A Brief Introduction to Me and AI"
 date: "2026-04-27"
 excerpt: "Not because I have everything figured out, but because I have a lot going on in my head and writing has always been how I make sense of it."
 tags: ["AI", "Reflection"]
