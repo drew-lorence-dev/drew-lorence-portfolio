@@ -40,7 +40,7 @@ export default function Hero() {
           <span className="whitespace-nowrap">Product Leader</span>{" "}
           <span className="text-accent font-semibold">·</span>{" "}
           <span className="whitespace-nowrap">Builder</span>{" "}
-          <span className="hidden md:inline text-accent-2 font-semibold">·</span>{" "}
+          <span className="text-accent-2 font-semibold">·</span>{" "}
           <span className="whitespace-nowrap">Unusual Creative</span>
         </p>
 
