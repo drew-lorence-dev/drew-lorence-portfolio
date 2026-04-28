@@ -85,26 +85,6 @@ export default function About() {
               people.
             </p>
 
-            <div className="pt-4 flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-sm font-mono">
-                <span className="text-accent">▸</span>
-                <span className="text-slate-300">
-                  Based in the United States
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-mono">
-                <span className="text-accent">▸</span>
-                <span className="text-slate-300">
-                  Product leader — leading cross-functional teams
-                </span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-mono">
-                <span className="text-accent">▸</span>
-                <span className="text-slate-300">
-                  Musician &amp; creative on the side
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Skills */}
