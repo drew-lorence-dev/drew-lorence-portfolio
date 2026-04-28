@@ -18,7 +18,7 @@ export default function BlogPage() {
               Blog
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Thinking Out Loud
+              Incoherent Ramblings
             </h1>
             <p className="text-slate-400 leading-relaxed text-base max-w-xl">
               Notes on product, AI, building, and whatever else is on my mind.
