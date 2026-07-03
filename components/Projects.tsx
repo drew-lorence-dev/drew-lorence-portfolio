@@ -1,70 +1,8 @@
-"use client";
-
-import { ExternalLink, X } from "lucide-react";
-import { useState } from "react";
-
-interface Screenshot {
-  src: string;
-  label: string;
-}
-
-interface Project {
-  name: string;
-  description: string;
-  tags: string[];
-  live?: string;
-  accent?: string;
-  screenshots?: Screenshot[];
-}
-
-const projects: Project[] = [
-  {
-    name: "Ninja x Lifestyle",
-    description:
-      "An activity tracking app built to keep you moving across all the ways you train. Connects with Fitbit and lets you log weights, cardio, stretching, and meditation — all in one place.",
-    tags: ["Activity Tracking", "Fitbit API", "Lovable"],
-    accent: "accent",
-    screenshots: [
-      { src: "/ninja-home.jpg", label: "Home Screen" },
-      { src: "/ninja-plan.jpg", label: "Plan an Activity" },
-      { src: "/ninja-activity.jpg", label: "View an Activity" },
-    ],
-  },
-  {
-    name: "The Product Dojo",
-    description:
-      "A learning platform prototype built for product managers who want to sharpen their craft. The Dojo delivers structured lessons at the intersection of AI and product management — practical skills, real frameworks, and the mindset shifts that separate good PMs from great ones.",
-    tags: ["Product Management", "AI", "Learning", "Lovable"],
-    accent: "accent-2",
-    screenshots: [
-      { src: "/dojo-home.jpg", label: "Home" },
-      { src: "/dojo-lesson.jpg", label: "Courses" },
-      { src: "/dojo-courses.jpg", label: "Lesson" },
-    ],
-  },
-];
-
-const accentColors: Record<string, { border: string; text: string; bg: string }> = {
-  accent: {
-    border: "hover:border-accent/40",
-    text: "text-accent",
-    bg: "bg-accent/10",
-  },
-  "accent-2": {
-    border: "hover:border-accent-2/40",
-    text: "text-accent-2",
-    bg: "bg-accent-2/10",
-  },
-  "accent-3": {
-    border: "hover:border-accent-3/40",
-    text: "text-accent-3",
-    bg: "bg-accent-3/10",
-  },
-};
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { projects, accentColors } from "@/lib/projects";
 
 export default function Projects() {
-  const [lightbox, setLightbox] = useState<Screenshot | null>(null);
-
   return (
     <section
       id="projects"
@@ -89,116 +27,62 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => {
-            const colors = accentColors[project.accent ?? "accent"];
+            const colors = accentColors[project.accent] ?? accentColors.accent;
             return (
-              <div
-                key={project.name}
-                className={`group relative p-7 rounded-2xl border border-white/8 bg-surface transition-all duration-300 ${colors.border} hover:bg-surface-2 flex flex-col`}
+              <Link
+                key={project.slug}
+                href={`/build/${project.slug}`}
+                className={`group relative rounded-2xl border border-white/8 bg-surface transition-all duration-300 ${colors.border} hover:bg-surface-2 flex flex-col overflow-hidden`}
               >
-                {/* Top row */}
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className={`text-xl font-bold font-mono ${colors.text}`}>
-                    {project.name}
-                  </h3>
-                  <div className="flex gap-3 ml-4">
+                <div className="p-7 pb-0 flex flex-col flex-1">
+                  {/* Top row */}
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className={`text-xl font-bold font-mono ${colors.text}`}>
+                      {project.name}
+                    </h3>
+                    <ArrowUpRight
+                      size={18}
+                      className="text-muted group-hover:text-white transition-colors ml-4 mt-1 shrink-0"
+                    />
+                  </div>
 
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted hover:text-white transition-colors"
-                        aria-label="Live site"
+                  {/* Description */}
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-7 mt-auto">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`px-2.5 py-1 rounded-md text-xs font-mono ${colors.bg} ${colors.text} border border-white/5`}
                       >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`px-2.5 py-1 rounded-md text-xs font-mono ${colors.bg} ${colors.text} border border-white/5`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Hero screenshot */}
+                <div className="relative mx-7 mb-0 rounded-t-xl border border-b-0 border-white/10 overflow-hidden shadow-lg">
+                  <img
+                    src={project.hero.src}
+                    alt={`${project.name} — ${project.hero.label}`}
+                    className="w-full object-cover object-top aspect-[9/10] group-hover:scale-[1.03] transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white text-xs font-mono bg-black/60 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    View project
+                  </span>
                 </div>
-
-                {/* Screenshots */}
-                {project.screenshots && (
-                  <div className="mt-auto">
-                    <p className="text-xs font-mono text-muted/50 uppercase tracking-widest mb-4">
-                      App Preview
-                    </p>
-                    <div className="grid grid-cols-3 gap-3">
-                      {project.screenshots.map((shot) => (
-                        <button
-                          key={shot.label}
-                          onClick={() => setLightbox(shot)}
-                          className="group/shot flex flex-col items-center gap-2 text-left"
-                        >
-                          <div className="relative w-full overflow-hidden rounded-xl border border-white/10 group-hover/shot:border-accent/40 transition-all duration-200 shadow-lg">
-                            <img
-                              src={shot.src}
-                              alt={shot.label}
-                              className="w-full object-cover object-top aspect-[9/19] group-hover/shot:scale-105 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover/shot:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                              <span className="text-white text-xs font-mono bg-black/60 px-2 py-1 rounded-md">
-                                View
-                              </span>
-                            </div>
-                          </div>
-                          <span className="text-xs font-mono text-muted/70 group-hover/shot:text-accent transition-colors">
-                            {shot.label}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+              </Link>
             );
           })}
         </div>
       </div>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6"
-          onClick={() => setLightbox(null)}
-        >
-          <div
-            className="relative max-h-[90vh] flex flex-col items-center gap-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setLightbox(null)}
-              className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full bg-surface border border-white/20 flex items-center justify-center text-muted hover:text-white transition-colors"
-            >
-              <X size={14} />
-            </button>
-            <img
-              src={lightbox.src}
-              alt={lightbox.label}
-              className="max-h-[80vh] w-auto rounded-2xl shadow-2xl border border-white/10"
-            />
-            <p className="text-sm font-mono text-muted">{lightbox.label}</p>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
