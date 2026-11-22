@@ -41,7 +41,7 @@ export default function Nav() {
           href={isHome ? "#home" : "/"}
           className="font-mono text-accent font-semibold tracking-tight hover:opacity-80 transition-opacity"
         >
-          drew<span className="text-accent-2">.</span>build
+          drew<span className="text-accent-2">.</span>create
         </a>
 
         {/* Desktop nav */}

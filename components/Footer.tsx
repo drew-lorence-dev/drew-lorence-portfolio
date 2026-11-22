@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
           <span className="font-mono text-accent font-semibold">
-            drew<span className="text-accent-2">.</span>build
+            drew<span className="text-accent-2">.</span>create
           </span>
           <p className="text-xs text-muted font-mono">
             &copy; {year} Drew Lorence. Built with Next.js.
