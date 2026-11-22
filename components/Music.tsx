@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const tracks = [
   {
+    title: "Big Dawgs",
+    year: "2026",
+    audioSrc: "/big-dawgs.mp3",
+  },
+  {
     title: "See You Space Cowboy",
     year: "2025",
     audioSrc: "/see-you-space-cowboy.mp3",
@@ -59,7 +64,7 @@ export default function Music() {
                 the highest bidder, with all proceeds going to Kids Chance of
                 America. It started as a fun idea, but it&apos;s turned into
                 something I&apos;m really proud of. So far, I&apos;ve created
-                four custom songs, and together they&apos;ve helped generate
+                five custom songs, and together they&apos;ve helped generate
                 meaningful donations to support a great cause.
               </p>
               <p>
